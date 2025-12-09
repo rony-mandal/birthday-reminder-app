@@ -1,5 +1,5 @@
 services:
-  # Backend Service
+  # Backend Service Only
   - type: web
     name: birthday-reminder-backend
     env: python
@@ -15,12 +15,3 @@ services:
         value: birthday_reminder
       - key: CORS_ORIGINS
         value: "*"
-
-  # Frontend Service  
-  - type: static
-    name: birthday-reminder-frontend
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/build
-    envVars:
-      - key: REACT_APP_BACKEND_URL
-        value: https://birthday-reminder-backend.onrender.com
