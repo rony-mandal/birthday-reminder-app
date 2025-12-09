@@ -17,14 +17,10 @@ services:
         value: "*"
 
   # Frontend Service  
-  - type: web
+  - type: static
     name: birthday-reminder-frontend
-    env: static
-    region: oregon
-    plan: free
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: build
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
     envVars:
       - key: REACT_APP_BACKEND_URL
         value: https://birthday-reminder-backend.onrender.com
