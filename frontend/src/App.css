@@ -1,0 +1,91 @@
+/* Neo-Brutalist styles for Birthday Reminder App */
+
+.confetti-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.confetti-shape {
+  position: absolute;
+  opacity: 0.1;
+}
+
+.confetti-shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid #FF6B6B;
+}
+
+.confetti-shape.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #A3E635;
+}
+
+.confetti-shape.square {
+  width: 25px;
+  height: 25px;
+  background: #FFE66D;
+  transform: rotate(15deg);
+}
+
+/* Countdown badge */
+.countdown-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #FF6B6B;
+  color: white;
+  font-weight: bold;
+  padding: 4px 12px;
+  border: 2px solid black;
+  border-radius: 9999px;
+  font-size: 12px;
+  box-shadow: 2px 2px 0px 0px black;
+}
+
+/* Birthday card hover effect */
+.birthday-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Photo placeholder */
+.photo-placeholder {
+  background: linear-gradient(135deg, #FFE66D 0%, #A3E635 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1A1A1A;
+}
+
+/* Pulse animation for today's birthdays */
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 4px 4px 0px 0px black, 0 0 0 0 rgba(255, 107, 107, 0.7);
+  }
+  50% {
+    box-shadow: 4px 4px 0px 0px black, 0 0 0 8px rgba(255, 107, 107, 0);
+  }
+}
+
+.birthday-today {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+/* Empty state illustration */
+.empty-state-img {
+  filter: grayscale(20%);
+  border: 3px solid black;
+  box-shadow: 8px 8px 0px 0px black;
+}

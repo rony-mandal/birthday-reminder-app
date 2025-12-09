@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&family=Outfit:wght@100..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 55 100% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 83% 71%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 82 77% 55%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 55 20% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 48 100% 71%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 10%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-cream text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .neo-button {
+    @apply px-6 py-3 bg-coral text-white font-bold border-2 border-black shadow-neo 
+           hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-hover 
+           active:translate-x-[4px] active:translate-y-[4px] active:shadow-none 
+           rounded-md uppercase tracking-wide transition-transform duration-150;
+  }
+  
+  .neo-button-secondary {
+    @apply px-6 py-3 bg-white text-black font-bold border-2 border-black shadow-neo 
+           hover:bg-lime hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-hover 
+           active:translate-x-[4px] active:translate-y-[4px] active:shadow-none 
+           rounded-md uppercase tracking-wide transition-transform duration-150;
+  }
+  
+  .neo-card {
+    @apply bg-white border-2 border-black shadow-neo p-6 rounded-lg relative overflow-hidden;
+  }
+  
+  .neo-input {
+    @apply h-12 border-2 border-black rounded-md px-4 focus:ring-0 focus:shadow-neo 
+           bg-white font-body transition-shadow duration-150 outline-none;
+  }
+  
+  .neo-badge {
+    @apply px-3 py-1 border-2 border-black rounded-full font-bold text-xs uppercase tracking-wider bg-sun;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDF5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}

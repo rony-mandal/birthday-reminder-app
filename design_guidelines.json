@@ -1,0 +1,144 @@
+{
+  "project_name": "Birthday_Reminder_App",
+  "design_philosophy": {
+    "persona": "E1 - The Anti-AI Designer",
+    "theme": "Neo-Brutalist Celebration",
+    "core_principles": [
+      "Fusion over Imitation: Mixing 'Godly' warmth with 'Neo-Brutalist' rawness.",
+      "Emotion First: Every interaction should feel like popping a confetti cannon.",
+      "Contrast: Hard black borders against soft cream backgrounds and neon accents.",
+      "Negative Space: Generous padding to let the bold typography breathe."
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "headings": "\"Lexend Mega\", sans-serif",
+      "body": "\"Outfit\", sans-serif",
+      "mono": "\"JetBrains Mono\", monospace"
+    },
+    "installation": "Import from Google Fonts in index.css: @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&family=Outfit:wght@100..900&display=swap');",
+    "usage_rules": {
+      "headings": "Use 'Lexend Mega' for all H1-H3. Tight tracking (-0.02em). Uppercase for labels.",
+      "body": "Use 'Outfit' for all paragraphs and UI text. High legibility.",
+      "weights": "Bold (700) or Black (900) for headers. Regular (400) or Medium (500) for body."
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#FFFDF5",
+      "foreground": "#1A1A1A",
+      "primary": "#FF6B6B",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#A3E635",
+      "secondary_foreground": "#1A1A1A",
+      "accent": "#FFE66D",
+      "accent_foreground": "#1A1A1A",
+      "destructive": "#FF0000",
+      "border": "#000000",
+      "input": "#FFFFFF",
+      "ring": "#1A1A1A"
+    },
+    "usage": {
+      "background": "Warm Cream (#FFFDF5) - Avoid pure white.",
+      "borders": "Hard Black (#000000) - 2px width everywhere.",
+      "primary": "Vibrant Coral (#FF6B6B) - Main CTAs.",
+      "secondary": "Acid Lime (#A3E635) - Success states, badges, secondary buttons."
+    },
+    "tailwind_config_extension": {
+      "colors": {
+        "cream": "#FFFDF5",
+        "coral": "#FF6B6B",
+        "lime": "#A3E635",
+        "sun": "#FFE66D"
+      },
+      "boxShadow": {
+        "neo": "4px 4px 0px 0px rgba(0,0,0,1)",
+        "neo-hover": "2px 2px 0px 0px rgba(0,0,0,1)",
+        "neo-lg": "8px 8px 0px 0px rgba(0,0,0,1)"
+      }
+    }
+  },
+  "visual_enhancers": {
+    "borders": "border-2 border-black rounded-md",
+    "shadows": "shadow-neo",
+    "textures": "Use a subtle noise texture overlay on the background if possible (opacity 0.05).",
+    "decorations": "Use confetti-like geometric shapes (triangles, circles) in absolute positions for empty spaces."
+  },
+  "layout": {
+    "grid_system": "Bento Grid (Mode A)",
+    "spacing": "Generous. Use p-8 or p-12 for containers. Gap-6 or Gap-8 for grids.",
+    "container": "Max-width 1200px. Centered but with asymmetrical internal layouts."
+  },
+  "components": {
+    "buttons": {
+      "style": "px-6 py-3 bg-primary text-white font-bold border-2 border-black shadow-neo hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-hover transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none rounded-md uppercase tracking-wide",
+      "variants": {
+        "secondary": "bg-white text-black border-2 border-black shadow-neo hover:bg-lime"
+      }
+    },
+    "cards": {
+      "style": "bg-white border-2 border-black shadow-neo p-6 rounded-lg relative overflow-hidden"
+    },
+    "inputs": {
+      "style": "h-12 border-2 border-black rounded-md px-4 focus:ring-0 focus:shadow-neo transition-all bg-white"
+    },
+    "badges": {
+      "style": "px-3 py-1 border-2 border-black rounded-full font-bold text-xs uppercase tracking-wider bg-accent"
+    }
+  },
+  "image_urls": {
+    "hero_party": {
+      "url": "https://images.pexels.com/photos/35119757/pexels-photo-35119757.jpeg",
+      "description": "Happy friends partying - Use for Hero section or Landing page visual.",
+      "category": "hero"
+    },
+    "cake_minimal": {
+      "url": "https://images.pexels.com/photos/4389637/pexels-photo-4389637.jpeg",
+      "description": "Minimal birthday cake - Use for 'Add Birthday' form or Empty State.",
+      "category": "illustration"
+    },
+    "friends_laughing": {
+      "url": "https://images.pexels.com/photos/35115722/pexels-photo-35115722.jpeg",
+      "description": "Friends laughing - Use for Testimonials or Community section.",
+      "category": "content"
+    },
+    "gift_box": {
+      "url": "https://images.pexels.com/photos/17959758/pexels-photo-17959758.jpeg",
+      "description": "Gift box - Use for 'Upcoming Birthdays' card decoration.",
+      "category": "icon"
+    }
+  },
+  "motion": {
+    "library": "framer-motion",
+    "guidelines": [
+      "Buttons must have a tactile 'press' effect (scale 0.98 or translate).",
+      "Lists should stagger in (staggerChildren: 0.1).",
+      "Modals should pop in with a spring animation (type: 'spring', bounce: 0.5).",
+      "Hover states should be snappy (duration: 0.2s)."
+    ]
+  },
+  "accessibility": {
+    "contrast": "Ensure all text on colored backgrounds meets WCAG AA (4.5:1). Use black text on Lime/Yellow/Cream.",
+    "focus_states": "Visible thick black outline (ring-2 ring-black ring-offset-2) for keyboard navigation.",
+    "labels": "All inputs must have visible labels or aria-labels."
+  },
+  "instructions_to_main_agent": {
+    "setup": [
+      "Install dependencies: yarn add framer-motion react-fast-marquee clsx tailwind-merge",
+      "Update tailwind.config.js with the colors and box-shadows defined above.",
+      "Import the Google Fonts in index.css."
+    ],
+    "implementation_strategy": [
+      "1. Create a 'Layout' component that applies the cream background and global padding.",
+      "2. Build a reusable 'NeoButton' and 'NeoCard' component to enforce the design system.",
+      "3. For the Dashboard, use a Bento Grid: Large 'Upcoming Birthday' hero card, smaller 'Stats' cards, and a tall 'Calendar' list.",
+      "4. Use the 'cake_minimal' image for the empty state when no birthdays are added.",
+      "5. Ensure the 'Add Birthday' form feels like an invitation card, not a tax form."
+    ],
+    "universal_guidelines": [
+      "DO NOT use gradients. Stick to solid, bold colors.",
+      "DO NOT use default Shadcn styles. Override them with the 'neo' classes.",
+      "Always add data-testid to interactive elements."
+    ]
+  }
+}
