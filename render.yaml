@@ -1,13 +1,14 @@
 services:
-  # Backend Service Only
   - type: web
-    name: birthday-reminder-backend
+    name: birthday-reminder-app
     env: python
     region: oregon
     plan: free
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    buildCommand: |
+      pip install -r backend/requirements.txt
+      cd frontend && npm install --legacy-peer-deps && npm run build
+    startCommand: |
+      cd backend && uvicorn server:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: MONGO_URL
         sync: false
