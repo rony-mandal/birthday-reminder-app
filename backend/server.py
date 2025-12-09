@@ -449,6 +449,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+frontend_build = Path(__file__).parent.parent / "frontend" / "build"
+if frontend_build.exists():
+    # Serve static files
+    app.mount("/static", StaticFiles(directory=frontend_build / "static"), name="static")
+    
+    # Serve index.html for all non-API routes
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str):
+        # Don't serve frontend for API routes
+        if full_path.startswith("api/"):
+            raise HTTPException(status_code=404)
+        
+        file_path = frontend_build / full_path
+        if file_path.is_file():
+            return FileResponse(file_path)
+        return FileResponse(frontend_build / "index.html")
 @app.on_event("startup")
 async def startup_event():
     # Start the scheduler
